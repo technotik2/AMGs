@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Car details
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href=
+"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+<style>
+   
+
+form{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+</style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="logo.jpeg" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="appointment.html">Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Confirmed Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html"><i class="bi bi-person"></i>Profile</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <Center> <h1>Car Details</h1></Center>
+   
+    <form action="/action_page.php" class="was-validated">
+        
+        
+       
+        <label for="carmake">Make :&nbsp;&nbsp;</label>
+        <input type="text" id="carmake" name="carmake"><br>
+      <br>
+      
+      <label for="carmodel">Model :</label>
+        <input type="text" id="carmodel" name="carmodel"><br>
+      <br>
+      
+      <label for="caryear">Year :&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" id="caryear" name="caryear">
+
+<br><br>
+        <p>Transmission :</p>
+         <input type="radio" id="automatic" name="fav_transmission" value="automatic">
+        <label for="automatic">Automatic</label>
+        <input type="radio" id="manual" name="fav_transmission" value="manual">
+          <label for="manual">manual</label><br><br>
+        
+        <label for="carengine">Engine :</label>
+          <input type="text" id="carengine" name="carengine"><br>
+        <br>
+        
+        <p>Fuel Type :</p>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="motorvehicle">
+        <label for="vehicle1">Petrol</label>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="motorvehicle2">
+        <label for="vehicle2">Diesel</label>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="motorvehicle3">
+        <label for="vehicle3">Electric</label><br><br>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+            <label class="form-check-label" for="myCheck">I agree on terms & services</label>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Check this checkbox to continue.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Add Car</button>
+   
+    </form>
+    </div>
+</body>
+
+</html>
