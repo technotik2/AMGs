@@ -54,9 +54,8 @@ form{
 <label for="service2">123</label>
 <input type="checkbox" id="service3" name="service3" value="servicevehicle3">
 <label for="service3">XYZ</label>
-<textarea id="service" name="service" rows="4" cols="50">
- Enter here...
-    </textarea> <br><br>
+<br>
+<input type="text" id="service1" name="service1" style="width: 400px;height: 100px;">
 
 
     <p>Diagnostic service: </p>
@@ -78,10 +77,15 @@ form{
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Check this checkbox to continue.</div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="sub()" >Submit</button>
    
     </form>
     </div>
 </body>
-
+<script>
+    function sub() {
+  window.alert("Submitted. Youll be contacted shortly.")
+  
+}
+</script>
 </html>

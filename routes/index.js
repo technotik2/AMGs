@@ -4,7 +4,6 @@ const { listen } = require('../config/app');
 var router = express.Router();
 const routes= require('./users')
 
-const bcrypt = require('bcryptjs');
 const cors = require("cors")
 const { data } = require('jquery');
 const jwt = require('jsonwebtoken');
