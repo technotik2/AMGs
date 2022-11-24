@@ -30,7 +30,7 @@ form{
   
     <Center> <h1>Appointment with mechanic</h1></Center><br><br>
    
-    <form action="/action_page.php" class="was-validated">
+    <form action="/post-data1" class="was-validated" method="post">
         <!-- <div class="mb-3 mt-3">
             <label for="uname" class="form-label">Select Date:</label>
             <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
@@ -41,16 +41,16 @@ form{
         <label for="service1">Full Name</label>: <input type="text" id="service1" name="name" style="width: 400px"> 
          <div class="mb-3 mt-3">
             <label for="appointment" class="form-label">Select Date:</label>
-        <input  type="date" id="appointment" name="appointment" required> 
+        <input  type="date" id="appointment" name="date" required> 
     </div><br>
     
     <label for="appt">Select time:</label>
-  <input type="time" id="appt" name="appt" required> <br><br>
+  <input type="time" id="appt" name="time" required> <br><br>
 
 
 <br>
 <p>Diagnostic service: </p>
-<input type="text" id="service1" name="service1" style="width: 400px;height: 100px;">
+<input type="text" id="service1" name="diag" style="width: 400px;height: 100px;">
 
 
     
@@ -59,7 +59,7 @@ form{
 <label for="service">Other service:</label>
 <br>
 
-  <textarea id="service" name="service" rows="4" cols="50" required>
+  <textarea id="service" name="other" rows="4" cols="50" required>
 
     </textarea>
     <br>
@@ -71,7 +71,7 @@ form{
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Check this checkbox to continue.</div>
         </div>
-        <button type="submit" class="btn btn-primary" onclick="sub()">Submit</button>
+        <button type="submit" class="btn btn-primary"  value="submit">Submit</button>
    
     </form>
     </div>
@@ -79,7 +79,7 @@ form{
 <script>
     function sub() {
   window.alert("Submitted. Youll be contacted shortly.")
-  window.location.href="/home";
+  
   
 }
 </script>
