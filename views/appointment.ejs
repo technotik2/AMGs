@@ -28,7 +28,7 @@ form{
     
 
   
-    <Center> <h1>Appointment with mechanic</h1></Center>
+    <Center> <h1>Appointment with mechanic</h1></Center><br><br>
    
     <form action="/action_page.php" class="was-validated">
         <!-- <div class="mb-3 mt-3">
@@ -38,7 +38,7 @@ form{
             <div class="invalid-feedback">Please fill out this field.</div>
         </div> -->
         
-       
+        <label for="service1">Full Name</label>: <input type="text" id="service1" name="name" style="width: 400px"> 
          <div class="mb-3 mt-3">
             <label for="appointment" class="form-label">Select Date:</label>
         <input  type="date" id="appointment" name="appointment" required> 
@@ -47,26 +47,20 @@ form{
     <label for="appt">Select time:</label>
   <input type="time" id="appt" name="appt" required> <br><br>
 
-  <p>Services: </p>
-<input type="checkbox" id="service1" name="service1" value="servicevehicle">
-<label for="service1">ABC</label>
-<input type="checkbox" id="service2" name="service2" value="servicevehicle2">
-<label for="service2">123</label>
-<input type="checkbox" id="service3" name="service3" value="servicevehicle3">
-<label for="service3">XYZ</label>
+
 <br>
+<p>Diagnostic service: </p>
 <input type="text" id="service1" name="service1" style="width: 400px;height: 100px;">
 
 
-    <p>Diagnostic service: </p>
- <input type="radio" id="issue" name="fav_issue" value="issue">
-<label for="issue">Let mechanic figure what's the issue!</label><br><br>
+    
+<br>
 
 <label for="service">Other service:</label>
 <br>
 
   <textarea id="service" name="service" rows="4" cols="50" required>
- Enter other service here...
+
     </textarea>
     <br>
     <br>
@@ -77,7 +71,7 @@ form{
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Check this checkbox to continue.</div>
         </div>
-        <button type="submit" class="btn btn-primary" onclick="sub()" >Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="sub()">Submit</button>
    
     </form>
     </div>
@@ -85,6 +79,7 @@ form{
 <script>
     function sub() {
   window.alert("Submitted. Youll be contacted shortly.")
+  window.location.href="/home";
   
 }
 </script>

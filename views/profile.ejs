@@ -69,11 +69,20 @@ form{
             <div class="valid-feedback">Valid.</div>
             <div class="invalid-feedback">Check this checkbox to continue.</div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="submit" class="btn btn-primary">Add Car</button>
+        <button type="submit" class="btn btn-primary" onclick="sub()">Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="add()">Add Car</button>
         <button type="reset" class="btn btn-primary">Reset</button>
     </form>
     </div>
 </body>
-
+<script>
+    function sub() {
+  window.alert("Submitted. Youll be contacted shortly.")
+  window.location.href="/home";
+  
+  }
+  function add(){
+      window.alert('added to inventory')
+}
+</script>
 </html>
