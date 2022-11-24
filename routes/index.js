@@ -41,54 +41,34 @@ router.get('/profile', function (req, res) {
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
-  client.close();
+  
 });
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   console.log("Database created!");
   
-});
-
- //Creating the collection 
-//  MongoClient.connect(url, function(err, db) {
-//   if (err) throw err;
-//   var dbo = db.db("mydb");
-//   dbo.createCollection("customers", function(err, res) {
-//     if (err) throw err;
-//     console.log("Collection created!");
-    
-//   });
-// });
-
-
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("mydb");
-  var myobj = { Fullname: "Peyman T", Date: "", time:"", Diagnostic:"", Other:"" };
   
-  dbo.collection("customers").insertOne(myobj, function(err, res) {
-    if (err) throw err;
-    console.log("1 document inserted");
-    
-  });
 });
 
-//not working right
+
+//saving data in the database and redircting to home page
 router.post('/post-data1', function (req, res) {
   var dbo = client.db("mydb");
-  var bodyJson = JSON.parse(req.body.name)
-  dbo.collection("customers").insertOne(bodyJson, function(err, res) {
+  
+  nameJ= JSON.stringify(req.body)
+  console.log(nameJ)
+  var myobj = { Fullname: req.body.name, Date: req.body.date, time:req.body.time, Diagnostic:req.body.diag, Other:req.body.other };
+  MongoClient.connect(url, function(err, db) {
+    dbo.collection("customers").insertOne(myobj, function(err, res) {
     if (err) throw err;
     console.log("1 DATA RECIEVED");
     
+    
   });
-  
-});
-//redircting user to home page 
-router.post('/post-data1', function (req, res) {
+
+  });
   res.render('Landing', { title: 'Home' });
-  console.log(req.body.name, req.body.date)
-  
+
 });
 
 
