@@ -5,9 +5,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongo = require('mongodb');
+const mongoose = require('mongoose')
+
+const User = require('../models/user')
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://peyman:iraniran1394@dbserver.lven6.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("mydb").collection("userdata");
+  // perform actions on the collection object
+  
+});
 
 var app = express();
 
@@ -46,6 +56,18 @@ resave : false
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+
+
+// Registering user data in DB
+app.post('/api/register', async (req, res)=> {
+  
+  console.log(req.body)
+  res.json({status: 'ok'})
+});
+
+
 
 
 // catch 404 and forward to error handler

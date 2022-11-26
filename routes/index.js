@@ -7,6 +7,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 var router = express.Router();
 const routes= require('./users')
 var bodyParser = require('body-parser');
+const mongoose = require('mongoose')
 
 const cors = require("cors")
 const { data } = require('jquery');
@@ -19,7 +20,7 @@ router.use(cors({
   origin:['http://localhost:3000', 'http://localhost:8080', 'http://localhost:4200']
 }))
 router.use(cookieParser())
-
+router.use(bodyParser.json())
 /* GET home page. */
 router.get('/', function (req, res) {
   res.render('Landing', { title: 'Home' });
@@ -45,6 +46,8 @@ router.get('/cred', function (req, res) {
 router.get('/register', function (req, res) {
   res.render('register', { title: 'Sign up' });
 });
+
+
 
 
 
