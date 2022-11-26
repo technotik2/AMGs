@@ -23,7 +23,7 @@ let passportlocal = require('passport-local');
 let localStrategy = passportlocal.Strategy;
 let flash = require('connect-flash');
 
-//database setup
+
 
 //point mongoos eto database url
 
@@ -64,5 +64,7 @@ app.use(function(err, req, res, next) {
   res.render('error', { title: 'Error' });
 });
 
-
+// connect to db
+const db = require('../models/db');
+db.connect();
 module.exports = app;

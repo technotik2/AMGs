@@ -35,18 +35,22 @@ router.get('/home', function (req, res) {
 // ---------------------------------
 
 router.get('/profile', function (req, res) {
-  res.render('profile', { title: 'Your Profile' });
+  res.render('profile', { title: 'Car Profile' });
 });
+
+router.get('/cred', function (req, res) {
+  res.render('cred', { title: 'Login or Sign up' });
+});
+
+router.get('/register', function (req, res) {
+  res.render('register', { title: 'Sign up' });
+});
+
+
 
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
-  
-});
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  console.log("Database created!");
-  
   
 });
 
