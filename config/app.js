@@ -1,5 +1,6 @@
 
 //3rd party modules
+require("dotenv").config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,8 +11,12 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/user')
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
+const jwt = require('jsonwebtoken')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://peyman:iraniran1394@dbserver.lven6.mongodb.net/?retryWrites=true&w=majority";
+const JWT_SECRET = process.env.JWT_KEY
+console.log(JWT_SECRET)
+
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
   const collection = client.db("mydb").collection("userdata");
@@ -25,13 +30,7 @@ var app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
-//module for authentication
-let session = require('express-session');
-let passport = require('passport');
 
-let passportlocal = require('passport-local');
-let localStrategy = passportlocal.Strategy;
-let flash = require('connect-flash');
 
 
 
@@ -47,17 +46,26 @@ app.use(express.static(path.join(__dirname, '../node_modules')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-//setup express session
-app.use(session({
-secret :"SomeSecret",
-saveUninitialized : false,
-resave : false
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 
+
+//Checking login info
+app.post('/api/login', async(req, res)=>{
+
+
+  const {username, password}= req.body
+  
+  const user= await User.findOne({username}).lean()
+  if(!user){
+    return res.json({status:'error', error:"Invalid username/password"})
+  }
+  if (await bcrypt.compare(password, user.password)){
+    const token= jwt.sign({id: user._id, username:user.username}, JWT_SECRET)
+    return res.json({status:'ok', data:token})
+  }
+
+  res.json({status:'ok', error:"Invalid username/password"})
+})
 
 
 // Registering user data in DB
@@ -96,6 +104,7 @@ app.post('/api/register', async (req, res)=> {
     throw error
 
   }
+  
 
 
 });

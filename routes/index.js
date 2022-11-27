@@ -1,4 +1,5 @@
 var express = require('express');
+require("dotenv").config();
 const { listen } = require('../config/app');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://peyman:iraniran1394@dbserver.lven6.mongodb.net/?retryWrites=true&w=majority";
@@ -7,6 +8,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 var router = express.Router();
 const routes= require('./users')
 var bodyParser = require('body-parser');
+const JWT_SECRET = process.env.JWT_KEY
 const mongoose = require('mongoose')
 
 const cors = require("cors")

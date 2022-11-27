@@ -1,5 +1,5 @@
 {
-  "name": "assignment1",
+  "name": "AMGs",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -24,6 +24,7 @@
     "cookieparser": "^0.1.0",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.2",
@@ -45,14 +46,14 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/technotik2/Assignment1.git"
+    "url": "https://github.com/technotik2/AMGs.git"
   },
-  "author": "Peyman Talkhekar - 301165495",
+  "author": "Team 2",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/technotik2/Assignment1.git"
+    "url": "https://github.com/technotik2/AMGs.git"
   },
-  "homepage": "https://github.com/technotik2/Assignment1.git",
+  "homepage": "https://github.com/technotik2/AMGs.git",
   "devDependencies": {
     "tslib": "^2.3.1"
   }
