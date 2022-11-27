@@ -6,7 +6,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose')
-
+const bcrypt = require('bcryptjs')
 const User = require('../models/user')
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
@@ -62,9 +62,42 @@ app.use(passport.session());
 
 // Registering user data in DB
 app.post('/api/register', async (req, res)=> {
+  const{username, password: plainTextPassword}=req.body
+  if(!username || typeof username!=='string'){
+    return res.json({status: 'error', error:'Invalid username'})
+  }
   
+
+
+  if(plainTextPassword.length<5){
+    return res.json({status: 'error', error:'Password should be longer than 5 chars'})
+  }
+
+
   console.log(req.body)
-  res.json({status: 'ok'})
+  // Hashing password. Salt=10
+  password = await bcrypt.hash(plainTextPassword, 10)
+  
+  try{
+    const response = await User.create({
+      username,
+      password
+    })
+    console.log('user created successfully. ', response)
+
+
+  } 
+  catch(error){
+    if(error.code ===11000){
+    return res.json({status:'username in use', error:'Username already in use'})
+
+
+    }
+    throw error
+
+  }
+
+
 });
 
 
