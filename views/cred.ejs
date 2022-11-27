@@ -51,6 +51,7 @@
             </div>
             </form>
             <p class="text--center">Not a member? <a href="/register">Sign Up now</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
+            
             </div>
     </div>
   </div>
@@ -82,7 +83,8 @@ async function registerUser(event){
     ).then((res)=> res.json())
     console.log(result)
     if (result.status==='ok'){
-      console.log('Got the token, ', result)
+      
+      alert("you are now logged in")
 
     }else{
       alert(result.error)

@@ -42,13 +42,12 @@ router.get('/profile', function (req, res) {
 });
 
 router.get('/cred', function (req, res) {
-  res.render('cred', { title: 'Login or Sign up' });
+  res.render('cred', { title: 'Login' });
 });
 
 router.get('/register', function (req, res) {
   res.render('register', { title: 'Sign up' });
 });
-
 
 
 

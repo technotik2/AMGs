@@ -49,6 +49,9 @@ app.use('/users', usersRouter);
 
 
 
+
+
+
 //Checking login info
 app.post('/api/login', async(req, res)=>{
 
@@ -64,7 +67,7 @@ app.post('/api/login', async(req, res)=>{
     return res.json({status:'ok', data:token})
   }
 
-  res.json({status:'ok', error:"Invalid username/password"})
+  res.json({status:'error', error:"Invalid username/password"})
 })
 
 
@@ -92,6 +95,8 @@ app.post('/api/register', async (req, res)=> {
       password
     })
     console.log('user created successfully. ', response)
+    return res.json({status: 'ok'})
+
 
 
   } 
