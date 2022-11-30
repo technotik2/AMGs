@@ -1,14 +1,36 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { post } from "jquery";
 
 function Login() {
+  const navigate = useNavigate();
   const [loginCredentials, setLoginCredentials] = useState({
     username: "",
     password: "",
   });
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(loginCredentials);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(loginCredentials),
+    };
+    await fetch("http://localhost:3000/api/login", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "ok") {
+          let token = data.data;
+          localStorage.setItem("auth-token", JSON.stringify(token));
+          navigate("/");
+
+          window.location.reload();
+        }
+        if (data.status === "error") {
+          alert("Invalid username/password!");
+        }
+      });
+
     setLoginCredentials({
       username: "",
       password: "",

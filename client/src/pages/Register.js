@@ -1,15 +1,34 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
   const [registerCredentials, setRegisterCredentials] = useState({
     username: "",
     password: "",
   });
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(registerCredentials);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(registerCredentials),
+    };
+    await fetch("http://localhost:3000/api/register", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "ok") {
+          let token = data.data;
+          localStorage.setItem("auth-token", JSON.stringify(token));
+          navigate("/");
+        }
+        if (data.status === "username in use") {
+          alert(data.error);
+        }
+      });
     setRegisterCredentials({ username: "", password: "" });
+    // navigate("/login");
   };
   return (
     <div style={{ height: "80vh" }}>
