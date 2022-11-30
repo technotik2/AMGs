@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include partials/header.ejs %>
-    <%- include partials/main_nav.ejs %>
+    <%- include('partials/header') %>
+    <%- include('partials/main_nav') %>
     
 <head>
     
@@ -85,4 +85,6 @@ form{
       window.alert('added to inventory')
 }
 </script>
+<%- include('partials/bottom_nav') %>
+<%- include('partials/footer') %>
 </html>
