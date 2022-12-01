@@ -16,4 +16,6 @@ const FooterNav = styled.div`
   height: 50px;
   background-color: #eeeeee;
   text-align: left;
+  margin-top: 3rem;
+  padding: 1rem 1rem;
 `;
