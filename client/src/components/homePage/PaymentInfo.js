@@ -2,30 +2,30 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import cardsPic from "../../images/cards.jpg";
 
 function PaymentInfo() {
   return (
     <Container>
       <Row>
         <Col>
-          <h5>
-            <span style={{ color: "#eb6440", textDecoration: "underline" }}>
-              Don't have a time?
-            </span>
-          </h5>
           <p>
-            When you don't have a time to go to repair shop, let the mechanic
-            come to your place.
+            We want our business as simple as possible. We don't want you to
+            deal with trying to find cash. It is always easier to pay online
+            than keeping the cash in your pocket ready to use.
           </p>
-          <p> All you have to do is;</p>
-          <ul>
-            <li>Set your appointment,</li>
-            <li>Continue on your daily life,</li>
-            <li>Welcome the mechanic at your place,</li>
-            <li>Get your car repaired,</li>
-            <li>Pay online,</li>
-          </ul>
-          <p>It is that much easy.</p>
+          <p> We are offering fast and secure payments.</p>
+          <p>
+            When you are done with you car repair, you don't need to talk the
+            mechanic about how you are paying.
+          </p>
+          <p>
+            Also, your receipts are sent to you online when you complete your
+            payment.
+          </p>
+        </Col>
+        <Col md={4}>
+          <img src={cardsPic} className="d-block w-100" alt="Accepted Cards" />
         </Col>
       </Row>
     </Container>

@@ -13,20 +13,20 @@ function MMiddle() {
         <Col>
           <h5>
             <span style={{ color: "#eb6440", textDecoration: "underline" }}>
-              Don't have a time?
+              Urgent call?
             </span>
           </h5>
           <p>
-            When you don't have a time to go to repair shop, let the mechanic
-            come to your place.
+            Don't panic! Anybody can have a broken car in the middle of the
+            street.
           </p>
           <p> All you have to do is;</p>
           <ul>
-            <li>Set your appointment,</li>
-            <li>Continue on your daily life,</li>
-            <li>Welcome the mechanic at your place,</li>
-            <li>Get your car repaired,</li>
-            <li>Pay online,</li>
+            <li>Go to appointment page,</li>
+            <li>Select urgent call,</li>
+            <li>Share your location,</li>
+            <li>One of the mechanic will contact you,</li>
+            <li>Afterwards, Pay online,</li>
           </ul>
           <p>It is that much easy.</p>
         </Col>
@@ -52,9 +52,10 @@ const Button = styled.div`
   margin-left: 1rem;
 
   :hover {
-    background-color: red;
+    background-color: #497174;
     color: white;
-    transition: all 1s ease-in-out;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
   }
 `;
 export default MMiddle;
