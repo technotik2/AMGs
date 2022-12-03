@@ -13,20 +13,19 @@ function MiddleRight() {
         <Col>
           <h5>
             <span style={{ color: "#eb6440", textDecoration: "underline" }}>
-              Don't have a time?
+              Schedule an appointment?
             </span>
           </h5>
           <p>
-            When you don't have a time to go to repair shop, let the mechanic
-            come to your place.
+            If you are not in a tight schedule, take your car to repair shop.
           </p>
           <p> All you have to do is;</p>
           <ul>
+            <li>Select a repair shop,</li>
             <li>Set your appointment,</li>
-            <li>Continue on your daily life,</li>
-            <li>Welcome the mechanic at your place,</li>
-            <li>Get your car repaired,</li>
-            <li>Pay online,</li>
+            <li>Take your car to repair shop,</li>
+            <li>Wait while your car getting repaired,</li>
+            <li>Pay online, Pay cheaper prices!</li>
           </ul>
           <p>It is that much easy.</p>
         </Col>
@@ -50,5 +49,11 @@ const Button = styled.div`
   border-radius: 1rem;
   margin-right: 1rem;
   margin-left: 1rem;
+  :hover {
+    background-color: #497174;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
 `;
 export default MiddleRight;

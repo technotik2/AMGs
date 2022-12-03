@@ -30,13 +30,13 @@ function Home() {
       <Divider>How it works?</Divider>
       <Container>
         <Row style={{ marginTop: "20px" }}>
-          <Col className="d-flex align-items-center ">
+          <Col md={4} className="d-flex align-items-center ">
             <MiddleLeft />
           </Col>
-          <Col className="d-flex align-items-center ">
+          <Col md={4} className="d-flex align-items-center ">
             <MMiddle />
           </Col>
-          <Col className="d-flex align-items-center">
+          <Col md={4} className="d-flex align-items-center">
             <MiddleRight />
           </Col>
         </Row>

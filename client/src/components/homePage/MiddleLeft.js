@@ -51,6 +51,12 @@ const Button = styled.div`
   border-radius: 1rem;
   margin-right: 1rem;
   margin-left: 1rem;
+  :hover {
+    background-color: #497174;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 export default MiddleLeft;
